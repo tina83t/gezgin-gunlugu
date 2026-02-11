@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import PlaceItem from '../Components/PlaceItem'; 
 
 const Home = () => {
-    // Verilerimizi ve kutucukları kontrol eden alan (State)
+    
     const [places, setPlaces] = useState([]);
     const [city, setCity] = useState("");
     const [location, setLocation] = useState("");
 
-    // ➕ EKLEME FONKSİYONU 
+
     const addPlace = () => {
         if (city.trim() && location.trim()) {
             const newPlace = {
@@ -17,17 +17,17 @@ const Home = () => {
                 isVisited: false
             };
             setPlaces([...places, newPlace]);
-            setCity(""); // Ekleme sonrası kutuyu temizle
-            setLocation(""); // Ekleme sonrası kutuyu temizle
+            setCity(""); 
+            setLocation(""); 
         }
     };
 
-    // 🗑️ SİLME FONKSİYONU [cite: 22]
+   
     const deletePlace = (id) => {
         setPlaces(places.filter(p => p.id !== id));
     };
 
-    // ✅ GÜNCELLEME FONKSİYONU [cite: 21]
+   
     const toggleVisited = (id) => {
         setPlaces(places.map(p => 
             p.id === id ? { ...p, isVisited: !p.isVisited } : p
@@ -38,7 +38,7 @@ const Home = () => {
         <div className="container mt-5">
             <h1 className="text-center mb-4 text-primary">🌍 Gezgin Günlüğüm</h1>
             
-            {/* --- 1. KISIM: EKLEME FORMU --- */}
+        
             <div className="card p-4 mb-5 shadow-sm border-0 bg-light">
                 <h4 className="mb-3">Yeni Yer Ekle </h4>
                 <div className="row g-3">
@@ -62,7 +62,7 @@ const Home = () => {
                 </div>
             </div>
 
-            {/* --- 2. KISIM: LİSTELEME --- */}
+            
             <div className="row">
                 <div className="col-12">
                     <h4 className="mb-3">Gezi Listem ({places.length}) </h4>

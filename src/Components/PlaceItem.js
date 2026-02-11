@@ -1,6 +1,6 @@
 import React from 'react';
 
-// Bu bileşen her bir gezi yerini temsil eder
+
 const PlaceItem = ({ place, onToggle, onDelete }) => {
     return (
         <li className="list-group-item d-flex justify-content-between align-items-center animate__animated animate__fadeIn">
